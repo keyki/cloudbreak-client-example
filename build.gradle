@@ -1,0 +1,22 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "http://maven.sequenceiq.com/releases" }
+    maven { url "https://repo.spring.io/snapshot" }
+}
+
+mainClassName = 'com.hortonworks.client.Example'
+
+jar {
+  baseName = 'example'
+  version = "0.1"
+}
+
+dependencies {
+  compile group: 'com.sequenceiq',                name: 'cloud-api',                    version: '2.1.0-dev.408'
+}
